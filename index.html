@@ -23,7 +23,7 @@
         }
 
         main {
-            background-image: url('/assets/background.svg');
+            background-image: url('assets/background.svg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -59,6 +59,7 @@
 
         .jumbotron h1 {
             font-size: 4.5rem;
+            font-weight: normal;
             line-height: 1.0;
             max-width: 60rem;
         }
@@ -93,7 +94,7 @@
         }
 
         .media {
-            background-color: #1C151E;
+            background-color: #1e1021;
             border-radius: 1rem;
             margin: 3rem 1rem;
             min-height: 5rem;
@@ -244,6 +245,38 @@
             text-align: center;
         }
 
+        .contact {
+            padding: 3rem 5rem 3rem 5rem;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            background-image: url('assets/contact-background.svg');
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: cover;  
+        }
+
+        .contact h1 {
+            font-size: 4.5rem;
+            font-weight: normal;
+        }
+
+        .contact p {
+            font-size: 1rem;
+            color: grey;
+            max-width: 30rem;
+        }
+
+        .contact .gradient-button {
+            margin-top: 5rem;
+        }
+
+        .contact .mail {
+            align-self: flex-end;
+            font-size: 2rem;
+            color: grey;
+        }
+
         #contact {
             scroll-behavior: smooth;
         }
@@ -253,7 +286,7 @@
 <body>
     <main>
         <nav>
-            <img src="/assets/pointai-logo.svg" alt="PointAI Logo">
+            <img src="assets/pointai-logo.svg" alt="PointAI Logo">
             <ul>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Cases</a></li>
@@ -265,7 +298,7 @@
         </nav>
 
         <section class="jumbotron">
-            <img src="/assets/beautify-logo.png" alt="Beautify Logo">
+            <img src="assets/beautify-logo.png" alt="Beautify Logo">
 
             <h1>Resolve 100% of your support tickets. Instantly.</h1>
 
@@ -280,7 +313,7 @@
     <section class="content">
         <h1>Meet Aisha — providing instant, always-on support</h1>
         <div>
-            <img src="/assets/globe-icon.png" alt="globe">
+            <img src="assets/globe-icon.png" alt="globe">
             <p>
                 At Beautify, our customer support relied heavily on human intervention. This approach often resulted in
                 inconsistent response times and varied quality of assistance. The financial implications of maintaining
@@ -314,23 +347,23 @@
     <div class="marquee">
         <div>
             <h1>PointAI</h1>
-            <img src="/assets/bot-pic.png" alt="bot picture">
+            <img src="assets/bot-pic.png" alt="bot picture">
             <h1>Beautify</h1>
-            <img src="/assets/bot-pic.png" alt="bot picture">
+            <img src="assets/bot-pic.png" alt="bot picture">
         </div>
 
         <div aria-hidden="true">
             <h1>PointAI</h1>
-            <img src="/assets/bot-pic.png" alt="bot picture">
+            <img src="assets/bot-pic.png" alt="bot picture">
             <h1>Beautify</h1>
-            <img src="/assets/bot-pic.png" alt="bot picture">
+            <img src="assets/bot-pic.png" alt="bot picture">
         </div>
     </div>
 
     <section class="content">
         <h1>Elevating Support at Beautify with PointAI</h1>
         <div>
-            <img src="/assets/globe-icon.png" alt="globe">
+            <img src="assets/globe-icon.png" alt="globe">
             <p>
                 “Partnering with PointAi and leveraging Luna has enabled our support team to allocate more time to
                 business-critical areas, enhancing our customer experience” says Nigora Akilova. “I'm enthusiastic about
@@ -344,7 +377,7 @@
         <h5>Multilingual and Multiplatform</h5>
         <h2>Unleash Luna's Versatility</h2>
         <p>Streamline your interactions with Luna, use it anywhere you want. Seamlessly integrate Luna into your preferred platform, be it social media, your website, or use our API to embed it in your own app.</p>
-        <img src="/assets/examples.png" alt="Examples">
+        <img src="assets/examples.png" alt="Examples">
     </section>
 
     <div class="marquee">
@@ -365,7 +398,12 @@
         </div>
     </div>
 
-    <section id="contact" class="media"></section>
+    <section id="contact" class="media contact">
+        <h1>wanna try like that?</h1>
+        <p>Don’t be shy to reach out! Fill up the form and our team  will get back to you within hours</p>
+        <a href="https://calendly.com/akhamidov/30min" class="gradient-button">Schedule a Call</a>
+        <a class="mail" href="mailto:azamat@pointai.tech">hello@pointai.tech</a>
+    </section>
 
 </body>
 
