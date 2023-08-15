@@ -13,6 +13,8 @@
         body {
             margin: 0px;
             box-sizing: border-box;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -232,13 +234,12 @@
 
         .examples {
             padding: 5rem 0rem 0rem 0rem;
-            padding-bottom: 0px;
         }
 
         .examples img {
             width: 100%;
         }
-        
+
         .examples p {
             max-width: 30rem;
             margin-top: 2rem;
@@ -253,12 +254,13 @@
             background-image: url('assets/contact-background.svg');
             background-position: center right;
             background-repeat: no-repeat;
-            background-size: cover;  
+            background-size: cover;
         }
 
         .contact h1 {
             font-size: 4.5rem;
             font-weight: normal;
+            line-height: 1.0;
         }
 
         .contact p {
@@ -279,6 +281,87 @@
 
         #contact {
             scroll-behavior: smooth;
+        }
+
+        @media only screen and (max-width: 768px) {
+            main {
+                padding-top: 2rem;
+            }
+
+            .gradient-button {
+                padding: 0.7rem 1.5rem;
+            }
+
+            nav {
+                margin: 0rem 2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .jumbotron {
+                margin: 4rem 2rem;
+            }
+
+            .jumbotron h1 {
+                font-size: 3rem;
+            }
+
+            .content {
+                margin: 6rem 2rem;
+            }
+
+            .content h1 {
+                font-size: 4rem;
+            }
+
+            .content img {
+                display: none;
+            }
+
+            .content p {
+                font-size: 1.3rem;
+            }
+
+            .stats {
+                padding: 5rem 2rem 7rem 2rem;
+            }
+
+            .stats>div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats>div>* {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .examples {
+                padding: 5rem 0rem 0rem 0rem;
+            }
+
+            .examples p {
+                margin: 1rem;
+            }
+
+            .contact {
+                padding: 3rem 2rem 2rem 2rem;
+                align-items: stretch;
+            }
+
+            .contact .mail {
+                margin-top: 2rem;
+                align-self: center;
+                font-size: 1.3rem;
+                color: grey;
+            }
+
+            .contact .gradient-button {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -376,7 +459,8 @@
     <section class="media stats examples">
         <h5>Multilingual and Multiplatform</h5>
         <h2>Unleash Luna's Versatility</h2>
-        <p>Streamline your interactions with Luna, use it anywhere you want. Seamlessly integrate Luna into your preferred platform, be it social media, your website, or use our API to embed it in your own app.</p>
+        <p>Streamline your interactions with Luna, use it anywhere you want. Seamlessly integrate Luna into your
+            preferred platform, be it social media, your website, or use our API to embed it in your own app.</p>
         <img src="assets/examples.png" alt="Examples">
     </section>
 
@@ -400,7 +484,7 @@
 
     <section id="contact" class="media contact">
         <h1>wanna try like that?</h1>
-        <p>Don’t be shy to reach out! Fill up the form and our team  will get back to you within hours</p>
+        <p>Don’t be shy to reach out! Fill up the form and our team will get back to you within hours</p>
         <a href="https://calendly.com/akhamidov/30min" class="gradient-button">Schedule a Call</a>
         <a class="mail" href="mailto:azamat@pointai.tech">hello@pointai.tech</a>
     </section>
