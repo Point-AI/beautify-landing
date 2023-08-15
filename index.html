@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautify x PointAI</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+        html,
+        body {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+
+            color: white;
+            font-family: 'Manrope', 'Helvetica', sans-serif;
+        }
+
+        main {
+            background-image: url('/assets/background.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-top: 4rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .jumbotron {
+            margin: 6rem 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 2rem;
+        }
+
+        .jumbotron img {
+            width: 8rem;
+        }
+
+        .jumbotron h1 {
+            font-size: 4.5rem;
+            line-height: 1.0;
+            max-width: 60rem;
+        }
+
+        .jumbotron p {
+            color: grey;
+            max-width: 26rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0rem 10rem 4rem 10rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 2rem;
+        }
+
+        .gradient-button {
+            background: linear-gradient(0deg, #F5B8FFE5, #FF53C6 51%, #F5B8FFE5) 0% var(--y, 0%)/100% 200%;
+            padding: 1rem 3rem;
+            border-radius: 0.3rem;
+            transition: 0.25s ease;
+        }
+
+        .gradient-button:hover {
+            --y: 100%;
+        }
+
+        .media {
+            background-color: #1C151E;
+            border-radius: 1rem;
+            margin: 3rem 1rem;
+            min-height: 5rem;
+        }
+
+        .stats {
+            padding: 5rem 8rem 7rem 8rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .stats h5 {
+            font-size: 1rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: grey;
+        }
+
+        .stats h2 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            font-weight: normal;
+            color: #DDD;
+            text-align: center;
+            line-height: 1.0;
+        }
+
+        .stats>div {
+            margin-top: 5rem;
+            width: 100%;
+            display: flex;
+            gap: 4rem;
+        }
+
+        .stats>div>* {
+            flex: 1;
+        }
+
+        .stats h1 {
+            font-size: 6rem;
+            font-weight: normal;
+            background: linear-gradient(180deg, #F57DFF 0.01%, #EE48FD 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .marquee {
+            --gap: 4rem;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: var(--gap);
+        }
+
+        .marquee>div {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: var(--gap);
+            min-width: 100%;
+            animation: marquee 10s linear infinite;
+        }
+
+        .marquee h1 {
+            font-size: 10rem;
+            font-weight: 500;
+            color: grey;
+            text-transform: uppercase;
+        }
+
+        .marquee img {
+            height: 8rem;
+        }
+
+        .marquee .gif {
+            border-radius: 1rem;
+        }
+
+        .marquee .button {
+            font-size: 2rem;
+            text-transform: uppercase;
+            border: solid 1px white;
+            padding: 2rem 3rem;
+            border-radius: 4rem;
+            transition: background-color 0.25s ease;
+        }
+
+        .marquee .button:hover {
+            background-color: #828282;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+
+        .content {
+            margin: 12rem 8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+        }
+
+        .content>div {
+            display: flex;
+        }
+
+        .content img {
+            height: 2.5rem;
+            width: 2.5rem;
+            margin-right: 10rem;
+            margin-top: 0.5rem;
+        }
+
+        .content h1 {
+            color: grey;
+            font-weight: 500;
+            font-size: 6rem;
+            line-height: 1.0;
+        }
+
+        .content p {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .examples {
+            padding: 5rem 0rem 0rem 0rem;
+            padding-bottom: 0px;
+        }
+
+        .examples img {
+            width: 100%;
+        }
+        
+        .examples p {
+            max-width: 30rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #contact {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <img src="/assets/pointai-logo.svg" alt="PointAI Logo">
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Cases</a></li>
+                <li><a href="#">Numbers</a></li>
+                <li><a href="#">Integrations</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+            <a href="#contact" class="gradient-button">Get started</a>
+        </nav>
+
+        <section class="jumbotron">
+            <img src="/assets/beautify-logo.png" alt="Beautify Logo">
+
+            <h1>Resolve 100% of your support tickets. Instantly.</h1>
+
+            <p>Beautify gets ultimate customer support solution with Aisha, the AI chatbot designed to revolutionize
+                your
+                customer experience.</p>
+
+            <a href="#contact" class="gradient-button">See it in Action</a>
+        </section>
+    </main>
+
+    <section class="content">
+        <h1>Meet Aisha — providing instant, always-on support</h1>
+        <div>
+            <img src="/assets/globe-icon.png" alt="globe">
+            <p>
+                At Beautify, our customer support relied heavily on human intervention. This approach often resulted in
+                inconsistent response times and varied quality of assistance. The financial implications of maintaining
+                a full-time support team were significant, and our fluctuating success rates, coupled with
+                less-than-ideal CSAT scores, highlighted the need for a more efficient system.
+            </p>
+        </div>
+    </section>
+
+    <section class="media stats">
+        <h5>Oh yeah!</h5>
+        <h2>Integration has never <br /> been so effective</h2>
+        <div>
+            <div>
+                <h1>80%</h1>
+                <p>Average success rate of resolving customer issues</p>
+            </div>
+
+            <div>
+                <h1>200+</h1>
+                <p>Average success rate of resolving customer issues</p>
+            </div>
+
+            <div>
+                <h1>94%</h1>
+                <p>Average success rate of resolving customer issues</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <div>
+            <h1>PointAI</h1>
+            <img src="/assets/bot-pic.png" alt="bot picture">
+            <h1>Beautify</h1>
+            <img src="/assets/bot-pic.png" alt="bot picture">
+        </div>
+
+        <div aria-hidden="true">
+            <h1>PointAI</h1>
+            <img src="/assets/bot-pic.png" alt="bot picture">
+            <h1>Beautify</h1>
+            <img src="/assets/bot-pic.png" alt="bot picture">
+        </div>
+    </div>
+
+    <section class="content">
+        <h1>Elevating Support at Beautify with PointAI</h1>
+        <div>
+            <img src="/assets/globe-icon.png" alt="globe">
+            <p>
+                “Partnering with PointAi and leveraging Luna has enabled our support team to allocate more time to
+                business-critical areas, enhancing our customer experience” says Nigora Akilova. “I'm enthusiastic about
+                the ongoing collaboration with PointAI, especially as we integrate more of their AI-driven solutions
+                throughout our support division”
+            </p>
+        </div>
+    </section>
+
+    <section class="media stats examples">
+        <h5>Multilingual and Multiplatform</h5>
+        <h2>Unleash Luna's Versatility</h2>
+        <p>Streamline your interactions with Luna, use it anywhere you want. Seamlessly integrate Luna into your preferred platform, be it social media, your website, or use our API to embed it in your own app.</p>
+        <img src="/assets/examples.png" alt="Examples">
+    </section>
+
+    <div class="marquee">
+        <div>
+            <img src="https://media0.giphy.com/media/ICOgUNjpvO0PC/giphy.gif?cid=ecf05e47h8jd7igrgwwu7c9gve7vt5wsrcfzrptd2slpzp0l&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+                alt="kitten" class="gif">
+            <h1>PointAI</h1>
+            <a href="#" class="button">try it out</a>
+            <h1>PointAI</h1>
+        </div>
+
+        <div aria-hidden="true">
+            <img src="https://media0.giphy.com/media/ICOgUNjpvO0PC/giphy.gif?cid=ecf05e47h8jd7igrgwwu7c9gve7vt5wsrcfzrptd2slpzp0l&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+                alt="kitten" class="gif">
+            <h1>PointAI</h1>
+            <a href="#" class="button">try it out</a>
+            <h1>PointAI</h1>
+        </div>
+    </div>
+
+    <section id="contact" class="media"></section>
+
+</body>
+
+</html>
